@@ -14,5 +14,9 @@ export default ({ config, db }) => {
     res.json({ greeting: "world" });
   });
 
+  api.get('/db/url', (req, res) => {
+    res.json({ url: `${process.env.DB_HOST}:${process.env.DB_PORT}`});
+  });
+
   return api;
 }
