@@ -10,5 +10,9 @@ export default ({ config, db }) => {
     res.json({ version });
   });
 
+  api.get('/hello', (req, res) => {
+    res.json({ greeting: "world" });
+  });
+
   return api;
 }
