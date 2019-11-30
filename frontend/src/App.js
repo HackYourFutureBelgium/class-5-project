@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import API_URL from './api';
+import Login from './Login';
 
 const HELLO_ENDPOINT = `${API_URL()}/hello`;
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <Login />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
