@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from '@material-ui/core'
 import firebase from 'firebase';
 import { StyledFirebaseAuth } from 'react-firebaseui';
 
@@ -43,9 +44,7 @@ export default class Login extends Component {
     const { loggedIn, showLoginForm } = this.state;
 
     const content = loggedIn ? 'Welcome!' : (
-      <button onClick={() => this.setState({ showLoginForm: true })} type="button">
-        Login with firebase
-      </button>
+      <Button onClick={() => this.setState({ showLoginForm: true })} edge="start" color="inherit" aria-label="menu">Login</Button>
     );
 
     const loginForm = !showLoginForm ? null : (
