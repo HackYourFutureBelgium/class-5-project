@@ -26,7 +26,6 @@ module.exports = {
     "semi": 0,
     "max-len": 0,
     // "quotes": 0,
-    // "arrow-parens": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
@@ -42,7 +41,7 @@ module.exports = {
         "jest": true
       },
       rules: {
-          "max-len": 0
+          "max-len": 0,
       }
     }
   ]
