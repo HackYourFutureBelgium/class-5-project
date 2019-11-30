@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'react-app'
   ],
   globals: {
     Atomics: 'readonly',
@@ -23,6 +24,7 @@ module.exports = {
   ],
   rules: {
     "semi": 0,
+    "max-len": 0,
     // "quotes": 0,
     // "arrow-parens": 0,
     "react/jsx-one-expression-per-line": 0,
@@ -38,6 +40,9 @@ module.exports = {
       ],
       env: {
         "jest": true
+      },
+      rules: {
+          "max-len": 0
       }
     }
   ]
