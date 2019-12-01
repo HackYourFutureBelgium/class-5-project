@@ -125,13 +125,16 @@ jobs:
       # not needed because we manage the deployment artifacts on the firebase side
       # - store_artifacts:
       #     path: ./build
-  #backend_deploy:
-  #  executor: node
-  #  working_directory: ~/project/backend/
-  #  steps:
-  #    - attach_workspace:
-  #        at: ~/project/
-  #    - run: yarn firebase deploy --token "$FIREBASE_TOKEN"
+  backend_deploy:
+    docker:
+        - image: google/cloud-sdk
+    steps:
+      - run: |
+          echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+          gcloud --quiet config set project class-5-lazyvariable
+          gcloud --quiet config set compute/zone europe-west1
+          gcloud app deploy --quiet
+
 workflows:
   version: 2
   branch:
