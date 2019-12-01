@@ -43,7 +43,6 @@ function App() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => setMenuOpen(true)}>
             <MenuIcon />
           </IconButton>
-          <Login />
           <Typography variant="h6" className={classes.title}>
             App
           </Typography>
@@ -52,7 +51,7 @@ function App() {
       </AppBar>
       {/* wrapper of the "body" */}
       <Container maxWidth="lg">
-        {greeting}
+        The backend says: {greeting}
       </Container>
     </div>
   );
