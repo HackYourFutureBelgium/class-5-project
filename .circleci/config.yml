@@ -126,9 +126,12 @@ jobs:
       # - store_artifacts:
       #     path: ./build
   backend_deploy:
+    working_directory: ~/project/backend/
     docker:
         - image: google/cloud-sdk
     steps:
+      - attach_workspace:
+          at: ~/project/
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
           gcloud --quiet config set project class-5-lazyvariable
@@ -167,10 +170,10 @@ workflows:
     - backend_build:
         requires:
           - backend_install
-    #- backend_deploy:
-    #    filters:
-    #      branches:
-    #        only:
-    #          master
-    #    requires:
-    #      - backend_build
+    - backend_deploy:
+        filters:
+          branches:
+            only:
+              master
+        requires:
+          - backend_build
