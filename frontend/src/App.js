@@ -51,7 +51,13 @@ function App() {
       </AppBar>
       {/* wrapper of the "body" */}
       <Container maxWidth="lg">
+        <p>
         The backend says: {greeting}
+        </p>
+        <p>
+          I am talking to {API_URL()}
+        </p>
+
       </Container>
     </div>
   );

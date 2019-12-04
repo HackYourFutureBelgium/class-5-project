@@ -34,7 +34,10 @@ I configured the frontend to be deployed to a firebase hosting solution. For thi
 `yarn firebase init` and 
 `yarn firebase login:ci` to get a token. This token is set in CircleCI as an environment variable (because it's a secret) and then used in the deploy step 
 
-The backend is deployed to [AppEngine](https://cloud.google.com/appengine/docs/standard/nodejs/). For this, the CI needs a `$GCLOUD_SERVICE_KEY` environment variable which contains the secrets needed for the CI system to push and manipulate your backend running in the cloud. See [this tutorial](https://circleci.com/docs/2.0/google-auth/) for how to set that up
+The backend is deployed to [AppEngine](https://cloud.google.com/appengine/docs/standard/nodejs/). For this, the CI needs a `$GCLOUD_SERVICE_KEY` environment variable which contains the secrets needed for the CI system to push and manipulate your backend running in the cloud. See [this tutorial](https://circleci.com/docs/2.0/google-auth/) for how to set that up.
+
+1. [Create an Appengine project](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project)
+2. [install the cli](https://cloud.google.com/sdk/docs/) `gcloud`
 
 ## Linting
 
