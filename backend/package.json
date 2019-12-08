@@ -40,6 +40,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.13.3",
     "jest": "^24.9.0",
+    "mongodb": "^3.3.5",
     "morgan": "^1.8.0",
     "resource-router-middleware": "^0.6.0"
   },
