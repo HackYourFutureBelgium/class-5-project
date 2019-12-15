@@ -7,10 +7,8 @@ export default function Greeter() {
     switch (lang) {
       case 'en-US':
         return 'Hello'
-        break;
       case 'de-DE':
         return 'Guten Tag'
-        break;
       default:
         return '你好' // Ni hao
     }
