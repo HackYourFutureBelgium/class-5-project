@@ -8,6 +8,7 @@ import './App.css';
 import Menu from './Menu'
 import API_URL from './api';
 import Login from './Login';
+import Greeter from './Greeter'
 
 const HELLO_ENDPOINT = `${API_URL()}/hello`;
 
@@ -35,6 +36,7 @@ function App() {
       .then((val) => setGreeting(val.greeting));
   });
 
+
   return (
     <div className="App">
       <Menu open={menuOpen} onClose={() => setMenuOpen(false)} />
@@ -57,6 +59,7 @@ function App() {
         <p>
           I am talking to {API_URL()}
         </p>
+        <Greeter />
 
       </Container>
     </div>

@@ -13,6 +13,8 @@ firebase.initializeApp({
   messagingSenderId: '581022878605',
 });
 
+let unsubscribe = null
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -35,9 +37,16 @@ export default class Login extends Component {
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
+    unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       this.setState({ loggedIn: Boolean(user) });
     });
+  }
+
+  componentWillUnmount() {
+    if (unsubscribe != null && unsubscribe instanceof Function) {
+      console.log('shutting down firebase')
+      unsubscribe()
+    }
   }
 
   render() {

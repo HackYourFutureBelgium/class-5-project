@@ -11,6 +11,9 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  env: {
+    "jest/globals": true
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
